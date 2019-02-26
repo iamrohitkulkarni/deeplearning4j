@@ -557,7 +557,7 @@ NDArray* MmulHelper::simpleMMul(const NDArray* a, const NDArray* b, NDArray* c, 
 
             const Nd4jLong numOfSubArrs = ShapeUtils::getNumOfSubArrs(xT->getShapeInfo(), dimsToExclude);
 
-#pragma omp parallel for schedule(guided)
+//#pragma omp parallel for schedule(guided)
             for(Nd4jLong i = 0; i < numOfSubArrs; ++i) {
                 auto xSubArr = (*xT)(i, dimsToExclude);
                 auto ySubArr = (*yT)(i, dimsToExclude);
